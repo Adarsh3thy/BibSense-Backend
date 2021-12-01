@@ -3,6 +3,15 @@ const app = express()
 const port =  3001
 
 const rds_model = require('./rds_model')
+const cors = require(‘cors’);
+
+app.use(
+  cors({
+    origin: https://bibsens.herokuapp.com,
+    // for now we don't want other methods but make sure to place only those which we only intend to use from client
+    methods: ['GET' /* ,'POST','DELETE','UPDATE','PUT','PATCH' */],
+  }),
+)
 
 app.use(express.json())
 app.use(function (req, res, next) {
