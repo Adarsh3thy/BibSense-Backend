@@ -7,7 +7,7 @@ const cors = require('cors');
 
 app.use(
   cors({
-    origin: "*",
+    origin: 'https://bibsens.herokuapp.com',
     // for now we don't want other methods but make sure to place only those which we only intend to use from client
     methods: ['GET' /* ,'POST','DELETE','UPDATE','PUT','PATCH' */],
   }),
@@ -15,7 +15,7 @@ app.use(
 
 app.use(express.json())
 app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', "*");
+  res.setHeader('Access-Control-Allow-Origin', 'https://bibsens.herokuapp.com');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
   next();
