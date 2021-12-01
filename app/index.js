@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3001
+const port =  3001
 
 const rds_model = require('./rds_model')
 
@@ -34,6 +34,6 @@ app.get('/:argument', (req, res) => {
 })
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`App running on port ${port}.`)
 })
